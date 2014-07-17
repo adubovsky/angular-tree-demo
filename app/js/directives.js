@@ -4,7 +4,7 @@
 
 (function () {
     angular.module('playAngular.directives', [])
-        .directive('inPlaceEditor', function () {
+        .directive('inPlaceEditor', ['$timeout', function ($timeout) {
             return {
                 restrict: 'E',
                 scope: { value: '=' },
@@ -29,7 +29,9 @@
                             if (scope.value) {
                                 stopEditing();
                             } else {
-
+                                $timeout(function () {
+                                    inputEl[0].focus();
+                                });
                             }
                         })
                         .prop('onkeyup', function (event) {
@@ -39,5 +41,5 @@
                         });
                 }
             };
-        });
+        }]);
 })();

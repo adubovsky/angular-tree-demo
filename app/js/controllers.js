@@ -3,7 +3,7 @@
 /* Controllers */
 
 (function () {
-    angular.module('playAngular.controllers', [])
+    angular.module('playAngular.controllers', ['playAngular.services'])
         .controller('TreeController', ['$scope', 'treeService', 'treeStateService', '$timeout', function ($scope, treeService, treeStateService, $timeout) {
             $scope.tree = treeStateService.restore() || treeService.get();
 
