@@ -1,0 +1,60 @@
+/* app css stylesheet */
+
+/* In Place Editor styles */
+.in-place-editor span {
+    cursor: pointer;
+}
+
+.in-place-editor span:hover {
+    background-color: #e6e6e6;
+}
+
+.in-place-editor:not(.active) input {
+    display: none;
+}
+
+.in-place-editor.active span {
+    display: none;
+}
+
+/* Tree styles */
+.angular-tree li in-place-editor {
+    margin: 0 5px;
+}
+
+.angular-tree li in-place-editor input {
+    height: 20px;
+}
+
+.angular-tree li .toggle-node {
+    cursor: pointer;
+}
+
+.angular-tree li {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 5px 0 5px;
+    position: relative
+}
+
+.angular-tree li::before, .angular-tree li::after {
+    content: '';
+    left: -33px;
+    position: absolute;
+}
+
+.angular-tree li::before {
+    border-left: 1px solid #999;
+    height: 100%;
+    top: 0;
+}
+
+.angular-tree li::after {
+    border-top: 1px solid #999;
+    top: 20px;
+    width: 35px
+}
+
+.angular-tree li:last-child::before {
+    height: 20px
+}
