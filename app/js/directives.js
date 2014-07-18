@@ -4,6 +4,9 @@
 
 (function () {
     angular.module('playAngular.directives', [])
+    /**
+     * Renders and controls in place editor
+     */
         .directive('inPlaceEditor', ['$timeout', function ($timeout) {
             return {
                 restrict: 'E',
@@ -14,25 +17,28 @@
 
                     var inputEl = angular.element(el.children()[1]),
                         stopEditing = function () {
-                            el.removeClass('active');
-                        };
-
-                    scope.edit = function () {
-                        el.addClass('active');
-                        var input = inputEl[0];
-                        input.focus();
-                        input.select();
-                    };
-
-                    inputEl
-                        .prop('onblur', function () {
+                            // do not allow empty names
                             if (scope.value) {
-                                stopEditing();
+                                el.removeClass('active');
                             } else {
                                 $timeout(function () {
                                     inputEl[0].focus();
                                 });
                             }
+                        };
+
+                    scope.edit = function () {
+                        el.addClass('active');
+                        var input = inputEl[0];
+                        // focus input and select all text on click
+                        input.focus();
+                        input.select();
+                    };
+
+                    inputEl
+                        // stop editing on blur & enter key
+                        .prop('onblur', function () {
+                            stopEditing();
                         })
                         .prop('onkeyup', function (event) {
                             if (event.keyCode == 13) {

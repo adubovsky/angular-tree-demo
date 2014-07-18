@@ -4,6 +4,9 @@
 
 (function () {
     angular.module('playAngular.controllers', ['playAngular.services'])
+    /**
+     * Controls tree
+     */
         .controller('TreeController', ['$scope', 'treeService', 'treeStateService', '$timeout', function ($scope, treeService, treeStateService, $timeout) {
             $scope.tree = treeStateService.restore() || treeService.get();
 
@@ -18,12 +21,13 @@
                 node.toggle();
             };
 
+            // automatically save tree to the local storage when tree changes
             var saveRequest;
             $scope.$watch('tree', function () {
                 $timeout.cancel(saveRequest);
                 saveRequest = $timeout(function () {
                     treeStateService.save($scope.tree);
-                }, 500); // user can type in node name input => do not trigger save immediately
+                }, 1000); // user can type in node name input => do not trigger save immediately
             }, true);
         }]);
 })();
