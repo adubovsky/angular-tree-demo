@@ -17,7 +17,7 @@ TODO
 In order to run project locally you need have `npm` installed.
 All below commands need to be run from the project folder
 
-- `npm start` - start the application on http://localhost:8000/app/#
+- `npm start` - start the application on `http://localhost:8000/app/`
 - `npm run test-single-run` - run unit tests
 - `npm run protractor` - run end to end tests (NOTE! Application server must be running)
 
