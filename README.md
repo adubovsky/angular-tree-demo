@@ -2,7 +2,7 @@ Demo Application for Tree in AngularJS
 ======================================
 
 ### Link to Requirements
-https://docs.google.com/document/d/1MzYAND0XJE44OF3UOr2DdHA1LSO6pqHI9Z18zpyc5yo/edit#
+https://docs.google.com/document/d/1MzYAND0XJE44OF3UOr2DdHA1LSO6pqHI9Z18zpyc5yo/edit
 
 ### Libraries
 - Angular JS
@@ -10,8 +10,8 @@ https://docs.google.com/document/d/1MzYAND0XJE44OF3UOr2DdHA1LSO6pqHI9Z18zpyc5yo/
 - Bootstrap
 - Jasmine, Karma and Protractor for testing
 
-### Demo
-TODO
+### Online Demo
+http://adubovsky.github.io/angular-tree-demo
 
 ### Instruction
 In order to run project locally you need have `npm` installed.

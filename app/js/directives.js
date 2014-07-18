@@ -8,7 +8,7 @@
             return {
                 restrict: 'E',
                 scope: { value: '=' },
-                template: '<span ng-click="edit()" title="click to edit">{{value}}</span><input name="nodeName" ng-model="value" placeholder="node name"/>',
+                template: '<span ng-click="edit()" title="click to edit">{{value}}</span><input ng-model="value" placeholder="node name"/>',
                 link: function (scope, el) {
                     el.addClass('in-place-editor');
 

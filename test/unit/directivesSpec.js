@@ -7,11 +7,11 @@ describe('directives', function () {
 
     describe('inPlaceEditor', function () {
 
-        var scope, element, editor, textEl, inputEl, button,
+        var scope, element, textEl, inputEl,
             INITIAL_TEXT = 'TEST NAME';
 
         beforeEach(inject(function ($rootScope, $compile) {
-            scope = $rootScope;
+            scope = $rootScope.$new();
             element = angular.element('<in-place-editor value="value"></in-place-editor>');
 
             $compile(element)(scope);

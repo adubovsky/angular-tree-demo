@@ -33,7 +33,4 @@ describe('service', function () {
         });
     });
 
-    describe('treeStateService', function () {
-        //TODO: implement
-    });
 });

@@ -24,13 +24,13 @@
 
 <!-- angular templates -->
 <script type="text/ng-template" id="node.html">
-    <i ng-click="toggle(node)" class="glyphicon" ng-class="node.hasChildren() ? 'toggle-node ' + (node.isExpanded() ? 'glyphicon-folder-open' : 'glyphicon-folder-close') : 'glyphicon-file'"></i>
+    <i ng-click="toggle(node)" class="node-icon glyphicon" ng-class="node.hasChildren() ? 'toggle-node ' + (node.isExpanded() ? 'glyphicon-folder-open' : 'glyphicon-folder-close') : 'glyphicon-file'"></i>
     <in-place-editor value="node.name"></in-place-editor>
-    <button ng-click="add(node)" class="btn btn-xs btn-default">
-        <i class="add-node glyphicon glyphicon-plus"></i>
+    <button ng-click="add(node)" class="add-node btn btn-xs btn-default">
+        <i class="glyphicon glyphicon-plus"></i>
         add
     </button>
-    <button ng-show="parentNode" ng-click="remove(node, parentNode)" class="btn btn-xs btn-warning">
+    <button ng-show="parentNode" ng-click="remove(node, parentNode)" class="remove-node btn btn-xs btn-warning">
         <i class="glyphicon glyphicon-trash"></i>
         remove
     </button>
